@@ -1,0 +1,399 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Bootstrap E-commerce Templates</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
+	<!-- bootstrap -->
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="themes/css/bootstrappage.css" rel="stylesheet" />
+
+	<!-- global styles -->
+	<link href="themes/css/main.css" rel="stylesheet" />
+	<link href="themes/css/jquery.fancybox.css" rel="stylesheet" />
+
+	<!-- scripts -->
+	<script src="themes/js/jquery-1.7.2.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="themes/js/superfish.js"></script>
+	<script src="themes/js/jquery.scrolltotop.js"></script>
+	<script src="themes/js/jquery.fancybox.js"></script>
+	<script src="themes/js/menu.js"></script>
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<script>
+        const designs = new Array("Big-Arakku|||",
+            "Big-Blue-4|||6700",
+            "Big-Blue-Green|||",
+            "Big-DarkGreen|||7700",
+            "Big-Dark_blue-4|||",
+            "Big-Glass1|||",
+            "Big-Light-Purple|||6300",
+            "Big-Peacock|||5200",
+            "Big-Peacock2|||5200",
+            "Big-Pink|||",
+            "Big-Purple|||",
+            "Big-Red1|||",
+            "Big-SeaBlue|||",
+            "Big-Veena|||",
+            "Big-Arakku|||",
+            "Big_Arakku2|||",
+            "Big_DarkGreen2|||8200",
+            "Big_SeaBlue2|||",
+            "Big-Krishna|||8700",
+            "Delicate-Fruit|||4300",
+            "Kasimala|||",
+            "Mediaum-Arakku1|||",
+            "Mediuam-Blue-4|||",
+            "Mediuam-Blue|||",
+            "Medium-Arakku|||",
+            "Medium-Arakku4|||",
+            "Medium-Blue|||",
+            "Medium-Flower|||",
+            "Medium-Glass-1|||4000",
+            "Medium-Gray1|||",
+            "Medium-Green1|||",
+            "Medium-pink-gem1|||",
+            "Medium-Pink|||3700|||",
+            "Medium-purple-peacock|||",
+            "Medium-Purple|||",
+            "Medium-Red|||",
+            "Medium-Red1|||",
+            "Medium-Red3|||",
+            "Medium-Red4|||",
+            "Medium-Yellow1|||",
+            "Necklace-Gems|||",
+            "pallakku|||9000|||",
+            "Small-Blue-5|||3700",
+            "Small-Blue-7|||",
+            "Small-Blue-Green-2|||",
+            "Small-Dark-Blue-5|||",
+            "Small-Dark_blue-9|||",
+            "Small-GrayYellow-1|||",
+            "Small-Green1|||",
+            "Small-Orange-3|||",
+            "Small-Pink-5|||",
+            "Small-Pink|||",
+            "Small-Pnk-8|||",
+            "Small-Purple-5|||",
+            "Small-Purple-6|||",
+            "Small-Purple-7|||",
+            "Small-Purple|||",
+            "Small-Purple2|||",
+            "Small-Purple3|||",
+            "Small-Purple4|||")
+
+	</script>
+	<div id="wrapper" class="container">
+		<div w3-include-html="./menu.html"></div>
+		<section class="header_text sub">
+			<img class="pageBanner" src="themes/images/designs/big-krishna_2.jpg" alt="New products">			
+			<h4 class="title">
+				<span class="pull-left"><span class="text"><span class="line">Product<strong>Detail</strong></span></span></span>				
+			</h4>
+		</section>
+		<section class="main-content">
+			<div class="row">
+				<div class="span9">
+					<div class="row">
+						<div class="span4">
+							<a href="themes/images/designs/" id="proddetaillink" class="thumbnail" data-fancybox-group="group1" title="Description 1"><img id="proddetail" alt="" src=""></a>
+							<ul class="thumbnails small">
+								<li class="span1">
+									<a href="#" id="proddetail1_original" class="thumbnail" data-fancybox-group="group1" title="Description 2"><img id="proddetail1"  src="themes/images/designs/delicate-fruit.jpg" style="height:60px;width:60px"  alt=""></a>
+								</li>
+								<li class="span1">
+									<a href="#" id="proddetail2_original" class="thumbnail" data-fancybox-group="group1" title="Description 3"><img id="proddetail2" src="themes/images/ladies/3.jpg" style="height:60px;width:60px" alt=""></a>
+								</li>
+								<li class="span1">
+									<a href="#" id="proddetail3_original" class="thumbnail" data-fancybox-group="group1" title="Description 4"><img id="proddetail3" src="themes/images/ladies/4.jpg" style="height:60px;width:60px" alt=""></a>
+								</li>
+								<li class="span1">
+									<a href="#" id="proddetail4_original" class="thumbnail" data-fancybox-group="group1" title="Description 5"><img id="proddetail4" src="themes/images/ladies/5.jpg" style="height:60px;width:60px" alt=""></a>
+								</li>
+							</ul>
+						</div>
+						<div class="span5">
+							<address>
+								<strong>Product:</strong> <span id="product"></span><br>
+								<strong>Product Code:</strong> <span id="code"></span><br>
+							</address>
+							<h4><span>&#8377; </span><strong><span id="price"></span></strong></h4>
+						</div>
+						<div class="span5">
+							<h4 class="title">
+								<span class="pull-left"><span class="text"><span class="line">To Order<strong> Call | EMAIL</strong></span></span></span>
+							</h4>
+						</div>
+						<div class="span5">
+							<h4>
+								EMAIL: <a href="mailto:zenanahandembroider@gmail.com">zenanahandembroider@gmail.com </a><br /><br />
+								PHONE: +91 97867 86827
+							</h4><br />
+							<strong>Address:</strong><br />
+						</div>
+					</div>
+					<div class="row">
+						<div class="span9">
+							<ul class="nav nav-tabs" id="myTab">
+								<li class="active"><a href="#home">Disclaimer</a></li>
+								<!--<li class=""><a href="#profile">Additional Information</a></li>-->
+							</ul>
+							<div class="tab-content">
+								<div class="tab-pane active" id="home">The product size and color may vary according to the lighting conditions and ambience during photography. If you would like to have more details about the product before purchase, please contact us at +91 97867 86827 or visit us inperson to our facility.</div>
+								<!--<div class="tab-pane" id="profile">
+									<table class="table table-striped shop_attributes">
+										<tbody>
+											<tr class="">
+												<th>Size</th>
+												<td>Large, Medium, Small, X-Large</td>
+											</tr>
+											<tr class="alt">
+												<th>Colour</th>
+												<td>Orange, Yellow</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>-->
+							</div>
+						</div>
+						<div class="span9">
+							<br>
+							<h4 class="title">
+								<span class="pull-left"><span class="text"><strong>Related</strong> Products</span></span>
+								<span class="pull-right">
+									<a class="left button" href="#myCarousel-1" data-slide="prev" onclick="javascript:randomizerelatedproducts()"></a><a class="right button" href="#myCarousel-1" onclick="javascript:randomizerelatedproducts()" data-slide="next"></a>
+								</span>
+							</h4>
+							<div id="myCarousel-1" class="carousel slide">
+								<div class="carousel-inner">
+									<div class="active item">
+										<ul class="thumbnails listing-products">
+											<li class="span3">
+												<div class="product-box">
+													<span class="sale_tag"></span>
+													<a id="relatedprpd1_original" href="themes/images/sarees/saree1.jpg" class="thumbnail" data-fancybox-group="group1" title="Description 1"><img alt="" src="themes/images/sarees/saree1.jpg" id="relatedprpd1" class="latest_products"></a><br />
+													<a id="relatedprpd1_original" href="product_detail.html" class="title"></a><br />
+													<a id="relatedprpd1_original" href="#" class="category"></a>
+													<p class="price" id="relatedprpd1_price"><span>&#8377; </span></p>
+												</div>
+											</li>
+											<li class="span3">
+												<div class="product-box">
+													<span class="sale_tag"></span>
+													<a id="relatedprpd2_original" href="themes/images/sarees/saree2.jpg" class="thumbnail" data-fancybox-group="group1" title="Description 1"><img alt="" src="themes/images/sarees/saree2.jpg" id="relatedprpd2" class="latest_products"></a><br />
+													<a id="relatedprpd2_original" href="product_detail.html" class="title"></a><br />
+													<a id="relatedprpd2_original" href="#" class="category"></a>
+													<p class="price" id="relatedprpd2_price"><span>&#8377; </span></p>
+												</div>
+											</li>
+											<li class="span3">
+												<div class="product-box">
+													<a id="relatedprpd3_original" href="themes/images/sarees/saree3.jpg" class="thumbnail" data-fancybox-group="group1" title="Description 1"><img alt="" src="themes/images/sarees/saree3.jpg" id="relatedprpd3" class="latest_products"></a><br />
+													<a id="relatedprpd3_original" href="product_detail.html" class="title"></a><br />
+													<a id="relatedprpd3_original" href="#" class="category"></a>
+													<p class="price" id="relatedprpd3_price"><span>&#8377; </span></p>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<div class="item">
+										<ul class="thumbnails listing-products">
+											<li class="span3">
+												<div class="product-box">
+													<span class="sale_tag"></span>
+													<a id="relatedprpd4_original" href="themes/images/sarees/saree4.jpg" class="thumbnail" data-fancybox-group="group1" title="Description 1"><img alt="" src="themes/images/sarees/saree4.jpg" id="relatedprpd4" class="latest_products"></a><br />
+													<a id="relatedprpd4_original" href="product_detail.html" class="title"></a><br />
+													<a id="relatedprpd4_original" href="#" class="category"></a>
+													<p class="price" id="relatedprpd4_price"><span>&#8377; </span></p>
+												</div>
+											</li>
+											<li class="span3">
+												<div class="product-box">
+													<a id="relatedprpd5_original" href="themes/images/sarees/saree5.jpg" class="thumbnail" data-fancybox-group="group1" title="Description 1"><img alt="" src="themes/images/sarees/saree5.jpg" id="relatedprpd5" class="latest_products"></a><br />
+													<a id="relatedprpd5_original" href="product_detail.html"></a><br />
+													<a id="relatedprpd5_original" href="#" class="category"></a>
+													<p class="price" id="relatedprpd5_price"><span>&#8377; </span></p>
+												</div>
+											</li>
+											<li class="span3">
+												<div class="product-box">
+													<span class="sale_tag"></span>
+													<a id="relatedprpd6_original" href="themes/images/sarees/saree6.jpg" class="thumbnail" data-fancybox-group="group1" title="Description 1"><img alt="" src="themes/images/sarees/saree6.jpg" id="relatedprpd6" class="latest_products"></a><br />
+													<a id="relatedprpd6_original" href="product_detail.html" class="title"></a><br />
+													<a id="relatedprpd6_original" href="#" class="category"></a>
+													<p class="price" id="relatedprpd6_price"><span>&#8377; </span></p>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="span3 col">
+
+					<div class="block">
+						<h4 class="title">
+							<span class="pull-left"><span class="text">Randomize</span></span>
+							<span class="pull-right">
+								<a class="left button" href="#myCarousel" data-slide="prev" onclick="javascript:randomizeblouses()"></a><a class="right button" href="#myCarousel" onclick="javascript:randomizeblouses()"  data-slide="next"></a>
+							</span>
+						</h4>
+						<div id="myCarousel" class="carousel slide">
+							<div class="carousel-inner">
+								<div class="active item">
+									<ul class="thumbnails listing-products">
+										<li class="span3">
+											<div class="product-box">
+												<span class="sale_tag"></span>
+												<a href="#" id="rndblouse1_original"><img alt="" id="rndblouse1" src="themes/images/blouses/Blouse1.jpg"></a><br />
+												<a href="#" id="rndblouse1_title" class="title">It's yours</a><br />
+												<a href="#" id="rndblouse1_category" class="category">Blouse</a>
+												<p class="price" id="rndblouse1_price"><span>&#8377; </span>261</p>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="item">
+									<ul class="thumbnails listing-products">
+										<li class="span3">
+											<div class="product-box">
+												<a href="#" id="rndblouse2_original"><img alt="" src="themes/images/blouses/Blouse2.jpg" id="rndblouse2"></a><br />
+												<a href="#" id="rndblouse2_title" class="title">It's yours</a><br />
+												<a href="#" id="rndblouse2_category" class="category">Blouse</a>
+												<p class="price"><span>&#8377; </span>134</p>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>					
+			</div>
+		</div>
+		</section>
+		<div w3-include-html="./footer.html"></div>
+	</div>
+	<script src="themes/js/common.js"></script>
+	<script>
+		includeHTML();
+		$(function () {
+			$('#myTab a:first').tab('show');
+			$('#myTab a').click(function (e) {
+				e.preventDefault();
+				$(this).tab('show');
+			})
+		})
+		$(document).ready(function () {
+			$('.thumbnail').fancybox({
+				openEffect: 'none',
+				closeEffect: 'none'
+			});
+
+			$('#myCarousel-2').carousel({
+				interval: 2500
+			});
+		});
+	</script>
+	<script>
+		function randomizerelatedproducts() {
+			var prd;
+            var prddtl;
+			var rndInt = 1;			                
+			for (i = 1; i <= 6; i++) {
+				rndInt = Math.floor(Math.random() * 54) + 1;
+				prd = document.getElementById('relatedprpd' + i);
+				prd.src = 'themes/images/sarees/saree' + rndInt + '.jpg';
+
+				prddtl = document.getElementById('relatedprpd' + i + '_original');
+				prddtl.href = 'themes/images/sarees/saree' + rndInt + '.jpg';
+			}
+		}
+
+        function randomizeblouses() {
+            var blsprd;
+            var blsprddtl;
+            var blsrndInt = 1;
+            for (i = 1; i <= 2; i++) {
+                blsrndInt = Math.floor(Math.random() * 39) + 1;
+                blsprd = document.getElementById('rndblouse' + i);
+                blsprd.src = 'themes/images/blouses/blouse' + blsrndInt + '.jpg';
+
+                blsprddtl = document.getElementById('rndblouse' + i + '_original');
+                blsprddtl.href = 'themes/images/blouses/blouse' + blsrndInt + '.jpg';
+            }
+		}
+
+        
+		function randomizeproddetail() {
+            var prddetail;
+            var prddetailprddtl;
+            var prddetailrndInt = 1;
+			for (i = 1; i <= 4; i++) {
+				if (designs[prddetailrndInt] != null) {
+					prddetailrndInt = Math.floor(Math.random() * 35) + 1;
+
+					prddetail = document.getElementById('proddetail' + i);
+					prddetail.src = 'themes/images/designs/' + designs[prddetailrndInt].split('|')[0] + '.jpg';
+
+					prddetailprddtl = document.getElementById('proddetail' + i + '_original');
+                    prddetailprddtl.href = 'themes/images/designs/' + designs[prddetailrndInt].split('|')[0] + '.jpg';
+				}
+            }            
+        }
+
+	</script>
+	<script>
+        var data = window.location.hash.substring(1);
+		var img = data.split('&')[0];
+        var prdct = data.split('&')[1];
+        var cde = data.split('&')[2];
+		var prc = data.split('&')[3];
+        var who = data.split('&')[4];
+
+		var strurl = 'themes/images/Designs/'  + img + '.jpg';
+        var strurlorg = 'themes/images/Designs/' + img + '_original.jpg';
+		if (who == 'S') {
+			strurl = 'themes/images/sarees/' + img + '.jpg';
+            strurlorg = 'themes/images/sarees/' + img + '.jpg';
+		}
+		else if (who == 'B') {
+			strurl = 'themes/images/blouses/' + img + '.jpg';
+            strurlorg = 'themes/images/blouses/' + img + '.jpg';
+		}
+		else {
+
+        }
+
+		var prd = document.getElementById('proddetail');
+        prd.src = strurl 
+
+        var prdlnk = document.getElementById('proddetaillink');
+        prdlnk.href = strurlorg 
+		prdlnk.title = prdct+' - ' + cde ;
+
+		var prduct = document.getElementById('product');
+        prduct.innerHTML = prdct;
+
+		var code = document.getElementById('code');
+        code.innerHTML = cde;
+
+		var price = document.getElementById('price');
+        price.innerHTML=  prc;
+        
+		randomizerelatedproducts();
+		randomizeblouses();
+		randomizeproddetail();
+	</script>
+</body>
+</html>
