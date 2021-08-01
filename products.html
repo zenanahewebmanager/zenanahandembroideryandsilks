@@ -180,11 +180,11 @@
 					<div class="pagination pagination-small pagination-centered">
 						<ul>
 							<li><a href="#">Prev</a></li>
-							<li class="active"><a href="javascript:loadproducts(0)">1</a></li>
-							<li><a href="javascript:loadproducts(9)">2</a></li>
-							<li><a href="javascript:loadproducts(18)">3</a></li>
-							<li><a href="javascript:loadproducts(36)">4</a></li>
-							<li><a href="#">Next</a></li>
+							<li class="active"><a href="javascript:loadproducts(1)">1</a></li>
+							<li><a href="javascript:loadproducts(2)">2</a></li>
+							<li><a href="javascript:loadproducts(3)">3</a></li>
+							<li><a href="javascript:loadproducts(4)">4</a></li>
+							<li><a href="javascript:loadnext()">Next</a></li>
 						</ul>
 					</div>
 				</div>
@@ -233,15 +233,27 @@
 	</div>
 	<script src="themes/js/common.js"></script>
 	<script type="text/javascript">
-		includeHTML();				
+		includeHTML();		
+        var pagescount = Math.round(designs.length / 9);
+        var pages = Array.from({ length: pagescount }, () => []);// new Array(pagescount,9);
+        counter = 0;
+        for (i = 0; i < pagescount; i++) {
+            for (j = 0; j < 9; j++) {
+                counter++;
+                if (designs[counter] == null) { counter = 0; }
+                pages[i][j + 1] = designs[counter];
+            }
+        }
 	</script>
 	<script>
+        var loadpage = 1;
 		function loadproducts(page) {
+            loadpage = page;
 			for (i = 1; i <= 9; i++) {
-				var img = designs[i + page].split('|')[0];
-				var prdctitle = designs[i + page].split('|')[1];;
-				var category = designs[i + page].split('|')[2];;
-				var prc = designs[i + page].split('|')[3];
+                var img = pages[loadpage - 1][i].split('|')[0];
+                var prdctitle = pages[loadpage - 1][i].split('|')[1];;
+                var category = pages[loadpage - 1][i].split('|')[2];;
+                var prc = pages[loadpage - 1][i].split('|')[3];
 
 				var prd = document.getElementById('prod' + i);
 				prd.src = 'themes/images/designs/' + img + '.jpg';
@@ -260,6 +272,13 @@
 
 			}
 		}
+        function loadnext() {
+            if (pagescount > loadpage) {
+                loadproducts(loadpage + 1);
+            } else {
+                loadpage = 1;
+            }
+        }
 
         function randomizeblouses() {
             var blsprd;
@@ -276,7 +295,7 @@
         }
 	</script>
 	<script>
-		loadproducts(0);
+		loadproducts(1);
 		randomizeblouses();
 	</script>
 </body>
