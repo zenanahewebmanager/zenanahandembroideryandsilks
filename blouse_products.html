@@ -28,6 +28,68 @@
 </head>
 <body>
 	<script>
+        const embdesigns = new Array("Big-Arakku|||",
+            //"Big-Blue-4|||6700",			
+            "beads-checked|||6700",
+            "Big-Blue-Green|||",
+            "Big-DarkGreen|||7700",
+            "Big-Dark_blue-4|||",
+            "Big-Glass1|||",
+            "Big-Light-Purple|||6300",
+            "Big-Peacock|||5200",
+            "Big-Peacock2|||5200",
+            "Big-Pink|||",
+            "Big-Purple|||",
+            "Big-Red1|||",
+            "Big-SeaBlue|||",
+            "Big-Veena|||",
+            "Big-Arakku|||",
+            "Big_Arakku2|||",
+            "Big_DarkGreen2|||8200",
+            "Big_SeaBlue2|||",
+            "Big-Krishna|||8700",
+            "Delicate-Fruit|||4300",
+            "Kasimala|||",
+            "Mediaum-Arakku1|||",
+            "Mediuam-Blue-4|||",
+            "Mediuam-Blue|||",
+            "Medium-Arakku|||",
+            "Medium-Arakku4|||",
+            "Medium-Blue|||",
+            "Medium-Flower|||",
+            "Medium-Glass-1|||4000",
+            "Medium-Gray1|||",
+            "Medium-Green1|||",
+            "Medium-pink-gem1|||",
+            "Medium-Pink|||3700|||",
+            "Medium-purple-peacock|||",
+            "Medium-Purple|||",
+            "Medium-Red|||",
+            "Medium-Red1|||",
+            "Medium-Red3|||",
+            "Medium-Red4|||",
+            "Medium-Yellow1|||",
+            "Necklace-Gems|Diamond Necklace|MNG0900|4000",
+            "pallakku|||9000|||",
+            "Small-Blue-5|||3700",
+            "Small-Blue-7|||",
+            "Small-Blue-Green-2|||",
+            "Small-Dark-Blue-5|||",
+            "Small-Dark_blue-9|||",
+            "Small-GrayYellow-1|||",
+            "Small-Green1|||",
+            "Small-Orange-3|||",
+            "Small-Pink-5|||",
+            "Small-Pink|||",
+            "Small-Pnk-8|||",
+            "Small-Purple-5|||",
+            "Small-Purple-6|||",
+            "Small-Purple-7|||",
+            "Small-Purple|||",
+            "Small-Purple2|||",
+            "Small-Purple3|||",
+			"Small-Purple4|||")
+
         const designs = new Array("Blouse1|Thilakam+Stone|Glitter+Pattern|8700|GLI0319",
             "Blouse10|Cut+Work|French+Knot+Pattern|9700|FRK0100",
             "Blouse11|Net+Work|Mango+Pattern|6200|MNG0917",
@@ -169,9 +231,9 @@
 											<div class="product-box">
 												<span class="sale_tag"></span>
 												<a href="#" id="rndblouse1_original"><img alt="" id="rndblouse1" src="themes/images/blouses/Blouse1.jpg"></a><br />
-												<a href="#" id="rndblouse1_title" class="title">It's yours</a><br />
-												<a href="#" id="rndblouse1_category" class="category">Blouse</a>
-												<p class="price" id="rndblouse1_price"><span>&#8377; </span>261</p>
+												<a href="#" id="rndblouse1_title" class="title"></a><br />
+												<a href="#" id="rndblouse1_category" class="category"></a>
+												<p class="price" id="rndblouse1_price"><span>&#8377; </span></p>
 											</div>
 										</li>
 									</ul>
@@ -181,9 +243,9 @@
 										<li class="span3">
 											<div class="product-box">
 												<a href="#" id="rndblouse2_original"><img alt="" src="themes/images/blouses/Blouse2.jpg" id="rndblouse2"></a><br />
-												<a href="#" id="rndblouse2_title" class="title">It's yours</a><br />
-												<a href="#" id="rndblouse2_category" class="category">Blouse</a>
-												<p class="price"><span>&#8377; </span>134</p>
+												<a href="#" id="rndblouse2_title" class="title"></a><br />
+												<a href="#" id="rndblouse2_category" class="category"></a>
+												<p id="rndblouse2_price" class="price"><span>&#8377; </span></p>
 											</div>
 										</li>
 									</ul>
@@ -228,10 +290,10 @@
                 prdlink.href = 'product_detail.html#' + img + '&' + prdctitle + '&' + code + '&' + prc + '&' + 'B';
 
 				var prdtitile = document.getElementById('prodtitle' + i);
-                prdtitile.innerHTML = (prdctitle ? prdctitle.replace('+', ' ') : '');
+                prdtitile.innerHTML = (prdctitle ? prdctitle.replaceAll('+', ' ') : '');
 
 				var code = document.getElementById('prodcat' + i);
-                code.innerHTML = (category ? category.replace('+', ' ') : '');
+                code.innerHTML = (category ? category.replaceAll('+', ' ') : '');
 
 				var price = document.getElementById('prodprice' + i);
 				price.innerHTML = '<span>&#8377; </span>' + prc;
@@ -248,17 +310,38 @@
         }
 
 		function randomizeblouses() {
-			var blsprd;
-			var blsprddtl;
-			var blsrndInt = 1;
-			for (i = 1; i <= 2; i++) {
-				blsrndInt = Math.floor(Math.random() * 39) + 1;
-				blsprd = document.getElementById('rndblouse' + i);
-				blsprd.src = 'themes/images/designs/' + blsrndInt + '.jpg';
+            var blsprd;
+            var blsprddtl;
+            var blsrndInt = 1;
+            for (i = 1; i <= 2; i++) {
 
-				blsprddtl = document.getElementById('rndblouse' + i + '_original');
-				blsprddtl.href = 'themes/images/designs/' + blsrndInt + '_original.jpg';
-			}
+                blsrndInt = Math.floor(Math.random() * 39) + 1;
+                while (embdesigns[blsrndInt] == null) {
+                    blsrndInt = Math.floor(Math.random() * 39) + 1;
+                }
+                var img = (embdesigns[blsrndInt] != null ? embdesigns[blsrndInt].split('|')[0] : '');
+                var prdctitle = (embdesigns[blsrndInt] != null ? embdesigns[blsrndInt].split('|')[1] : '');
+                var category = (embdesigns[blsrndInt] != null ? embdesigns[blsrndInt].split('|')[2] : '');
+                var prc = (embdesigns[blsrndInt] != null ? embdesigns[blsrndInt].split('|')[3] : '');
+                var code = (embdesigns[blsrndInt] != null ? embdesigns[blsrndInt].split('|')[4] : '');
+
+
+                blsprd = document.getElementById('rndblouse' + i);
+                blsprd.src = 'themes/images/designs/' + img + '.jpg';
+
+                blsprddtl = document.getElementById('rndblouse' + i + '_original');
+                blsprddtl.href = 'product_detail.html#' + img + '&' + prdctitle + '&' + code + '&' + prc + '&' + '';
+
+                var blousetitle = document.getElementById('rndblouse' + i + '_title');
+                blousetitle.innerHTML = (prdctitle ? prdctitle.replaceAll('+', ' ') : '');;
+
+                var blouecategory = document.getElementById('rndblouse' + i + '_category');
+                blouecategory.innerHTML = (category ? category.replaceAll('+', ' ') : '');;
+
+                var bloueprice = document.getElementById('rndblouse' + i + '_price');
+                bloueprice.innerHTML = '<span>&#8377; </span>' + prc;;
+
+            }
 		}
 	</script>
 	<script>

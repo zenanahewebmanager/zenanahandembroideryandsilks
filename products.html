@@ -89,6 +89,32 @@
 			"Small-Purple2|||",
 			"Small-Purple3|||",
 			"Small-Purple4|||")
+
+        const blouse = new Array("Blouse1|Thilakam+Stone|Glitter+Pattern|8700|GLI0319",
+            "Blouse10|Cut+Work|French+Knot+Pattern|9700|FRK0100",
+            "Blouse11|Net+Work|Mango+Pattern|6200|MNG0917",
+            "Blouse14|Kodi|Thread+Pattern|2700|THR0407",
+            "Blouse16|Butta+Design|Thread+Pattern|2700|THR0408",
+            "Blouse17|Thilak+Mala|Thread+Pattern|2700|THR0409",
+            "Blouse18|Temple+Design|Thread+Pattern|2700|THR0410",
+            "Blouse2|Kodimalar|Bird+Pattern|9000|BIR0606",
+            "Blouse21|Dots|Glitter+Pattern|2700|GLI0315",
+            "Blouse22|Aggula+Design|Thread+Pattern|2700|THR0411",
+            "Blouse23|Golden+Thilak|Glitter+Pattern|2700|GLI0316",
+            "Blouse24|Round+Stone|Glitter+Pattern|3200|GLI0607",
+            "Blouse25|Band+Design|Glitter+Pattern|3700|GLI0317",
+            "Blouse27|Bead+Rounded|Glitter+Pattern|3700|GLI0318",
+            "Blouse28|Flower+Design|Thread+Pattern|3200|THR0412",
+            "Blouse3|Kasimala|Vanki+Pattern|9000|VKD0805",
+            "Blouse30|Thilagam|Thread+Pattern|2700|THR0413",
+            "Blouse34|Dot+Design|Thread+Pattern|2700|THR0415",
+            "Blouse39|Checked+Beats|Vanki+Pattern|8700|VKD0806",
+            "Blouse4|Bird+With+Grape|Bird+Pattern|8700|BIR0608",
+            "Blouse5|Lotus|Mango+Pattern|5700|MNG0918",
+            "Blouse6|Beads+Work|Bird+Pattern|9000|BIR0609",
+            "Blouse8|Beaded+Arch|Vanki+Pattern|7700|VKD0807",
+            "Blouse9|Silver+Peacock|Thread+Pattern|8000|THR0416"
+        )
 	</script>
 	<div id="wrapper" class="container">
 		<div w3-include-html="./menu.html"></div>
@@ -204,10 +230,10 @@
 										<li class="span3">
 											<div class="product-box">
 												<span class="sale_tag"></span>
-												<a href="#" id="rndblouse1_original"><img alt="" id="rndblouse1" src="themes/images/blouses/Blouse1.jpg"></a><br />
+												<a href="#" id="rndblouse1_original"><img alt="" id="rndblouse1" class="thumbnail" src="themes/images/blouses/Blouse1.jpg"></a><br />
 												<a href="#" id="rndblouse1_title" class="title">It's yours</a><br />
 												<a href="#" id="rndblouse1_category" class="category">Blouse</a>
-												<p class="price" id="rndblouse1_price"><span>&#8377; </span>261</p>
+												<p id="rndblouse1_price" class="price" ><span>&#8377; </span>261</p>
 											</div>
 										</li>
 									</ul>
@@ -219,7 +245,7 @@
 												<a href="#" id="rndblouse2_original"><img alt="" src="themes/images/blouses/Blouse2.jpg" id="rndblouse2"></a><br />
 												<a href="#" id="rndblouse2_title" class="title">It's yours</a><br />
 												<a href="#" id="rndblouse2_category" class="category">Blouse</a>
-												<p class="price"><span>&#8377; </span>134</p>
+												<p id="rndblouse2_price" class="price"><span>&#8377; </span>134</p>
 											</div>
 										</li>
 									</ul>
@@ -260,7 +286,7 @@
 				prd.src = 'themes/images/designs/' + img + '.jpg';
 
 				var prdlink = document.getElementById('proddtl' + i);
-                prdlink.href = 'product_detail.html#' + img + '&' + prdctitle + '&' + category + '&' + prc + '&' + 'D';
+                prdlink.href = 'product_detail.html#' + img + '&' + prdctitle + '&' + code + '&' + prc + '&' + '';
 
 				var prdtitile = document.getElementById('prodtitle' + i);
 				prdtitile.innerHTML = (prdctitle ? prdctitle : '');
@@ -281,17 +307,39 @@
             }
         }
 
-        function randomizeblouses() {
+		function randomizeblouses() {           
+
             var blsprd;
             var blsprddtl;
             var blsrndInt = 1;
-            for (i = 1; i <= 2; i++) {
-                blsrndInt = Math.floor(Math.random() * 39) + 1;
+			for (i = 1; i <= 2; i++) {
+
+				blsrndInt = Math.floor(Math.random() * 39) + 1;
+				while (blouse[blsrndInt] == null) {
+                    blsrndInt = Math.floor(Math.random() * 39) + 1;
+                }
+                var img = (blouse[blsrndInt] !=null?blouse[blsrndInt].split('|')[0]:'');
+                var prdctitle = (blouse[blsrndInt] != null ? blouse[blsrndInt].split('|')[1]:'');
+				var category = (blouse[blsrndInt] != null ? blouse[blsrndInt].split('|')[2]: '');
+				var prc = (blouse[blsrndInt] != null ? blouse[blsrndInt].split('|')[3]: '');
+				var code = (blouse[blsrndInt] != null ? blouse[blsrndInt].split('|')[4]: '');
+
+                
                 blsprd = document.getElementById('rndblouse' + i);
-                blsprd.src = 'themes/images/blouses/Blouse' + blsrndInt + '.jpg';
+                blsprd.src = 'themes/images/blouses/' + img + '.jpg';
 
                 blsprddtl = document.getElementById('rndblouse' + i + '_original');
-                blsprddtl.href = 'themes/images/blouses/Blouse' + blsrndInt + '.jpg';
+                blsprddtl.href = 'product_detail.html#' + img + '&' + prdctitle + '&' + code + '&' + prc + '&' + 'B';
+
+                var blousetitle = document.getElementById('rndblouse' + i + '_title');
+                blousetitle.innerHTML = (prdctitle ? prdctitle.replaceAll('+', ' ') : '');;
+
+                var blouecategory = document.getElementById('rndblouse' + i + '_category');
+                blouecategory.innerHTML = (category ? category.replaceAll('+', ' ') : '');;
+
+                var bloueprice = document.getElementById('rndblouse' + i + '_price');
+                bloueprice.innerHTML = '<span>&#8377; </span>' + prc;;
+
             }
         }
 	</script>
